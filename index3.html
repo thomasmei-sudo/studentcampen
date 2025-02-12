@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Studentcampen</title>
   <style>
-    /* Grunnoppsett */
+    /* Tilbakestilling av margin/padding og bokshåndtering */
     * {
       box-sizing: border-box;
     }
@@ -13,40 +13,75 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #ffffff; /* Hvit bakgrunn */
-      color: #000000;           /* Svart tekst */
+      background-color: #ffffff; /* Hvit bakgrunn bak containeren */
+      color: #000; /* Standard svart tekst */
     }
 
-    /* Topp og bunn i #0D203B */
-    .header, .footer {
-      background-color: #0D203B;
-      color: #ffffff;
+    /* Øverst: mørk header */
+    .header {
+      background-color: #0D203B; 
+      color: #fff;
       padding: 20px;
     }
+    .header a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    .header h1, .header p {
+      margin: 0;
+    }
 
-    /* Sørger for at lenker i header/footer blir hvite (evt. understrukket ved hover) */
-    .header a, .footer a {
-      color: #ffffff;
+    /* Fanebar (ligger rett under headeren) */
+    .tab {
+      background-color: #0D203B;
+      border-bottom: 1px solid #ccc; /* Tynn linje under fanebaren */
+      overflow: hidden;
+    }
+    .tab button {
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      font-size: 17px;
+      background-color: inherit; /* arver .tab sin bakgrunn */
+      color: #fff; /* hvit tekst */
+      transition: background-color 0.3s;
+    }
+    .tab button:hover {
+      background-color: #1E3A5F;
+    }
+    .tab button.active {
+      background-color: #1E3A5F; /* Farge på aktiv fane */
+    }
+
+    /* Hoved-container med hvit bakgrunn, sentrert */
+    .container {
+      max-width: 900px; /* Juster etter ønsket bredde */
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    /* Fanenes innhold */
+    .tabcontent {
+      display: none; /* Skjules som standard */
+      padding: 20px 0; /* Litt luft over/under */
+    }
+
+    /* Footer (bunn) i samme farge som header */
+    .footer {
+      background-color: #0D203B;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .footer a {
+      color: #fff;
       text-decoration: underline;
     }
 
-    /* Hovedcontainer i midten med maks bredde (for desktop), sentrert */
-    .container {
-      max-width: 900px;  /* Juster til ønsket bredde */
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    /* Mellomrom mellom seksjonene */
-    section {
-      margin-bottom: 40px;
-    }
-
-    section h2 {
-      margin-top: 0;
-    }
-
-    /* Gjør evt. bilder skalerbare */
+    /* Gjør evt. bilder skalerbare i innholdet */
     img {
       max-width: 100%;
       height: auto;
@@ -62,27 +97,38 @@
     <p>Kontakt: <a href="mailto:studentcamp2025@gmail.com">studentcamp2025@gmail.com</a></p>
   </div>
 
-  <!-- HOVEDINNHOLD -->
+  <!-- FANEBAR -->
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Hjem')" id="defaultOpen">Hjem</button>
+    <button class="tablinks" onclick="openTab(event, 'Studentcampen')">Hva skjer i Studentcampen?</button>
+    <button class="tablinks" onclick="openTab(event, 'Transport')">Transport</button>
+    <button class="tablinks" onclick="openTab(event, 'Program')">Program</button>
+    <button class="tablinks" onclick="openTab(event, 'Daglighallen')">Ski-VM på Daglighallen</button>
+    <button class="tablinks" onclick="openTab(event, 'Byen')">Hva skjer i byen?</button>
+    <button class="tablinks" onclick="openTab(event, 'Kontakt')">Kontakt</button>
+  </div>
+
+  <!-- HVIT CONTAINER SOM INNEHOLDER TABCONTENT -->
   <div class="container">
-    
-    <!-- Hjem -->
-    <section id="hjem">
+
+    <!-- FANE: Hjem -->
+    <div id="Hjem" class="tabcontent">
       <h2>Hjem</h2>
       <p><strong>Velkommen til studentenes egen VM-camp, Studentcampen 2025!</strong></p>
       <p>Her blir det liv 10 dager til ende, fra 28. februar til 9. mars – helt gratis!</p>
       <p>Campen ligger i skogen langs løypene, og kan huse omtrent 2000 studenter per dag. Forbi her går alle distanseøvelsene, med første konkurranse 1. mars, der herrene går 20 km skibytte. Siste øvelse er 9. mars, der Therese Johaug går sitt siste mesterskapsrenn, og historiens første femmil for kvinner.</p>
-    </section>
+    </div>
 
-    <!-- Hva skjer i Studentcampen? -->
-    <section id="hva-skjer">
+    <!-- FANE: Studentcampen -->
+    <div id="Studentcampen" class="tabcontent">
       <h2>Hva skjer i Studentcampen?</h2>
       <p>I Studentkampen kan du komme opp enten alene eller sammen med en stor gjeng, og gjerne etablere en «camp i campen», og lage den stemningen du selv måtte ønske. Vi stiller med areal, du/dere stiller med stemningen!</p>
       <p>Det er fullt lov å nyte alkohol i campen, samt tenne bål. Siste fire dagene i mesterskapet vil det bli tent opp et fellesbål, altså 6. mars, 7. mars, 8. mars og 9. mars. Disse dagene trenger du ikke å ta med egen ved, bare egen mat!</p>
       <p>Det er også mulig å telte i campen – der det er plass til ca. 25 telt. Ingen booking kreves, det er bare å sette opp teltet!</p>
-    </section>
+    </div>
 
-    <!-- Transport -->
-    <section id="transport">
+    <!-- FANE: Transport -->
+    <div id="Transport" class="tabcontent">
       <h2>Transport</h2>
       <p>Eneste måte å komme seg opp til Granåsen under VM er enten til fots, på ski eller buss. AtB setter opp shuttelbusser fra Munkegata i Midtbyen, som går via Byåsen. Busstoppet i Granåsen ligger omtrent 2,5 kilometer unna Studentkampen, der det er skiltet godt hele veien.</p>
       <p>Shuttelbussene ned til byen igjen går via Lerkendal, med avstigning på Nidarosdomen.</p>
@@ -91,10 +137,10 @@
           https://www.atb.no/ski-vm-trondheim-2025/skyttelbuss-til-vm/
         </a>
       </p>
-    </section>
+    </div>
 
-    <!-- Program -->
-    <section id="program">
+    <!-- FANE: Program -->
+    <div id="Program" class="tabcontent">
       <h2>Program</h2>
       <p>Studentkampen åpner ettermiddagen den 28. februar, dagen før første distanseøvelse (20 km skibytte for herrer). Deretter holder campen åpen hver dag fram til ettermiddagen 9. mars, når VM avsluttes med kvinnenes femmil.</p>
       <p><strong>VM-programmet:</strong></p>
@@ -109,29 +155,29 @@
       </ul>
       <p><strong>Fellesmål 🔥</strong></p>
       <p>Det vil bli satt i gang fellesbål VMs fire siste dager, altså mellom 6. mars og 9. mars. Disse dagene trenger du/dere med andre ord bare å ta med mat/drikke selv!</p>
-    </section>
+    </div>
 
-    <!-- Ski-VM på Daglighallen -->
-    <section id="daglighallen">
+    <!-- FANE: Daglighallen -->
+    <div id="Daglighallen" class="tabcontent">
       <h2>Ski-VM på Daglighallen</h2>
       <p>Daglighallen, Samfundets brune bar, serverer VM-stemning hele mesterskapet. Der vil VM bli vist på storskjerm hver dag, samt at åpningstidene er utvidet. Det vil også bli lagt opp til at folk kan dra hit etter VM-rennene, for den aller beste VM-stemninga!</p>
-    </section>
+    </div>
 
-    <!-- Hva skjer i byen? -->
-    <section id="byen">
+    <!-- FANE: Byen -->
+    <div id="Byen" class="tabcontent">
       <h2>Hva skjer i byen?</h2>
       <p>Hele Trondheim kommer til å stå på hodet i to uker, med arrangementer, program og ståhei på hvert gatehjørne. Er du nysgjerrig på hva som skjer? Sjekk ut 
         <a href="https://trdevents.no" target="_blank">https://trdevents.no</a> for å få med deg alt som skjer!
       </p>
-    </section>
+    </div>
 
-    <!-- Kontakt -->
-    <section id="kontakt">
+    <!-- FANE: Kontakt -->
+    <div id="Kontakt" class="tabcontent">
       <h2>Kontakt</h2>
       <p>Arrangørstaben bak campen kan til enhver tid kontaktes via Facebook-arrangementet, eller via e-post på 
         <a href="mailto:studentcamp2025@gmail.com">studentcamp2025@gmail.com</a>.
       </p>
-    </section>
+    </div>
 
   </div><!-- /container -->
 
@@ -140,5 +186,26 @@
     <p>Studentcampen © 2025</p>
   </div>
 
+  <script>
+    function openTab(evt, tabName) {
+      // Skjul alt innhold
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      // Fjern "active"-klasse fra alle knapper
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      // Vis aktuell fane
+      document.getElementById(tabName).style.display = "block";
+      // Marker knapp som aktiv
+      evt.currentTarget.className += " active";
+    }
+    // Åpne "Hjem" som standard
+    document.getElementById("defaultOpen").click();
+  </script>
 </body>
 </html>
