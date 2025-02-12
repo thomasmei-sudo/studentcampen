@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Studentcampen Info</title>
+  <style>
+    /* Enkel stil for fanene */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background: #0D203B;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .tab {
+      overflow: hidden;
+      background-color: #f1f1f1;
+      border-bottom: 1px solid #ccc;
+    }
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: background-color 0.3s;
+      font-size: 17px;
+    }
+    .tab button:hover {
+      background-color: #ddd;
+    }
+    .tab button.active {
+      background-color: #ccc;
+    }
+    .tabcontent {
+      display: none;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Studentcampen Ski-VM 2025</h1>
+    <p>28. februar til 9. mars</p>
+  </div>
+
+  <!-- Fanemeny -->
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Hjem')" id="defaultOpen">Hjem</button>
+    <button class="tablinks" onclick="openTab(event, 'Hva skjer i Studentcampen?')">Hva skjer i Studentcampen?</button>
+    <button class="tablinks" onclick="openTab(event, 'Transport')">Transport</button>
+    <button class="tablinks" onclick="openTab(event, 'Program')">Program</button>
+    <button class="tablinks" onclick="openTab(event, 'Ski-VM på Daglighallen')">Ski-VM på Daglighallen</button>
+    <button class="tablinks" onclick="openTab(event, 'Hva skjer i byen?')">Hva skjer i byen?</button>
+    <button class="tablinks" onclick="openTab(event, 'Kontakt')">Kontakt</button>
+  </div>
+
+  <!-- Fane: Hjem -->
+  <div id="Hjem" class="tabcontent">
+    <h3>Hjem</h3>
+    <p><strong>Velkommen til studentenes egen VM-camp, Studentcampen 2025!</strong></p>
+    <p>Her blir det liv 10 dager til ende, fra 28. februar til 9. mars – helt gratis!</p>
+    <p>Campen ligger i skogen langs løypene, og kan huse omtrent 2000 studenter per dag. Forbi her går alle distanseøvelsene, med første konkurranse 1. mars, der herrene går 20 km skibytte. Siste øvelse er 9. mars, der Therese Johaug går sitt siste mesterskapsrenn, og historiens første femmil for kvinner.</p>
+
+    <h4>Transport</h4>
+    <p>Ski-VM og AtB setter opp shuttelbusser fra Munkegata, der disse stopper ca. 2.5 km unna campen. Herfra er det skiltet godt opp til campen.</p>
+    <p>Se mer om bussplanene under fanen «Transport». Mer info finnes også på AtBs egne nettsider: 
+      <a href="https://www.atb.no/ski-vm-trondheim-2025/" target="_blank">https://www.atb.no/ski-vm-trondheim-2025/</a>.
+    </p>
+
+    <h4>Toaletter</h4>
+    <p>Det er plassert ut toaletter omtrent 250 meter unna campen. Det er skiltet godt hit. Det er også anlagt et eget «pissoar» rett utenfor campen.</p>
+
+    <h4>Strøm</h4>
+    <p>Det vil være begrensede muligheter for å benytte strøm i campen. Om du trenger å lade telefon eller liknende, finnes det strømuttak på Sørem Gård, omtrent 400 meter unna.</p>
+
+    <h4>Ved</h4>
+    <p>Det blir vedutsalg rett ved campen, der en sekk koster 150 kroner – med kjøp på Vipps. Det er fullt mulig å medbringe ved kjøpt andre steder også.</p>
+  </div>
+
+  <!-- Fane: Hva skjer i Studentcampen? -->
+  <div id="Hva skjer i Studentcampen?" class="tabcontent">
+    <h3>Hva skjer i Studentcampen?</h3>
+    <p>I Studentkampen kan du komme opp enten aleine eller sammen med en stor gjeng, og gjerne etablere en «camp i campen», og lage den stemningen du selv måtte ønske. Vi stiller med areal, du/dere stiller med stemningen!</p>
+    <p>Det er fullt lov å nyte alkohol i campen, samt tenne bål. Siste fire dagene i mesterskapet vil det bli tent opp et fellesbål, altså 6. mars, 7. mars, 8. mars og 9. mars. Disse dagene trenger du ikke å ta med egen ved, bare egen mat!</p>
+    <p>Det er også mulig å telte i campen – der det er plass til ca. 25 telt. Ingen booking kreves, det er bare å sette opp teltet!</p>
+  </div>
+
+  <!-- Fane: Transport -->
+  <div id="Transport" class="tabcontent">
+    <h3>Transport</h3>
+    <p>Eneste måte å komme seg opp til Granåsen under VM er enten til fots, på ski eller buss. AtB setter opp shuttelbusser fra Munkegata i Midtbyen, som går via Byåsen. Busstoppet i Granåsen ligger omtrent 2,5 kilometer unna Studentkampen, der det er skiltet godt hele veien.</p>
+    <p>Shuttelbussene ned til byen igjen går via Lerkendal, med avstigning på Nidarosdomen.</p>
+    <p>Vi anbefaler at du leser deg opp på forhånd, via AtBs egen nettside for Ski-VM: 
+      <a href="https://www.atb.no/ski-vm-trondheim-2025/skyttelbuss-til-vm/#På-%20og%20avstigning" target="_blank">https://www.atb.no/ski-vm-trondheim-2025/skyttelbuss-til-vm/</a>
+    </p>
+  </div>
+
+  <!-- Fane: Program -->
+  <div id="Program" class="tabcontent">
+    <h3>Program</h3>
+    <p>Studentkampen åpner ettermiddagen den 28. februar, dagen før første distanseøvelse (20 km skibytte for herrer). Deretter holder campen åpen hver dag fram til ettermiddagen 9. mars, når VM avsluttes med kvinnenes femmil.</p>
+    <p><strong>VM-programmet:</strong></p>
+    <ul>
+      <li>1. mars: Skibytte 20 km herrer</li>
+      <li>2. mars: Skibytte 20 km kvinner</li>
+      <li>4. mars: Intervallstart 10 km kvinner og menn</li>
+      <li>6. mars: Stafett 4x7,5 km menn</li>
+      <li>7. mars: Stafett 4x7,5 km kvinner</li>
+      <li>8. mars: 5 mil menn</li>
+      <li>9. mars: 5 mil kvinner</li>
+    </ul>
+    <p><strong>Fellesmål 🔥</strong></p>
+    <p>Det vil bli satt i gang fellesbål VMs fire siste dager, altså mellom 6. mars og 9. mars. Disse dagene trenger du/dere med andre ord bare å ta med mat/drikke selv!</p>
+  </div>
+
+  <!-- Fane: Ski-VM på Daglighallen -->
+  <div id="Ski-VM på Daglighallen" class="tabcontent">
+    <h3>Ski-VM på Daglighallen</h3>
+    <p>Daglighallen, Samfundets brune bar, serverer VM-stemning hele mesterskapet. Der vil VM bli vist på storskjerm hver dag, samt at åpningstidene er utvidet. Det vil også bli lagt opp til at folk kan dra hit etter VM-rennene, for den aller beste VM-stemninga!</p>
+  </div>
+
+  <!-- Fane: Hva skjer i byen? -->
+  <div id="Hva skjer i byen?" class="tabcontent">
+    <h3>Hva skjer i byen?</h3>
+    <p>Hele Trondheim kommer til å stå på hodet i to uker, med arrangementer, program og ståhei på hvert gatehjørne. Er du nysgjerrig på hva som skjer? Sjekk ut 
+      <a href="https://trdevents.no" target="_blank">https://trdevents.no</a> for å få med deg alt som skjer!
+    </p>
+  </div>
+
+  <!-- Fane: Kontakt -->
+  <div id="Kontakt" class="tabcontent">
+    <h3>Kontakt</h3>
+    <p>Arrangørstaben bak campen kan til enhver tid kontaktes via Facebook-arrangementet, eller via e-post på 
+      <a href="mailto:studentcamp2025@gmail.com">studentcamp2025@gmail.com</a>.
+    </p>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      // Skjul alle faner
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      // Fjern "active"-klassen fra alle knapper
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      // Vis den valgte fanen og marker knappen som aktiv
+      document.getElementById(tabName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    // Klikk automatisk på standardfanen når siden lastes
+    document.getElementById("defaultOpen").click();
+  </script>
+
+</body>
+</html>
